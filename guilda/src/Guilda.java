@@ -40,4 +40,29 @@ public class Guilda {
             m.exibirHabilidade();
         }
     }
+
+    public void realizarMissao(Missao missao) {
+        System.out.println("\n>>> INICIANDO MISSÃO: " + missao.getTitulo() + " <<<");
+        System.out.println("Objetivo: " + missao.getDescricao());
+
+        if (membros.isEmpty()) {
+            System.out.println("[FALHA] A guilda não tem membros para enviar nesta missão!");
+            return;
+        }
+
+        int forcaTotalGrupo = 0;
+        for (MembroGuilda m : membros) {
+            forcaTotalGrupo += m.getNivel();
+        }
+
+        System.out.println("Força total do grupo: " + forcaTotalGrupo + " | Dificuldade da missão: " + missao.getDificuldadeRequerida());
+
+        if (forcaTotalGrupo >= missao.getDificuldadeRequerida()) {
+            this.ouro += missao.getRecompensaOuro();
+            System.out.println("[VITÓRIA] Missão concluída com sucesso!");
+            System.out.println("+ " + missao.getRecompensaOuro() + " moedas de ouro adicionadas ao caixa.");
+        } else {
+            System.out.println("[DERROTA] O grupo não foi forte o suficiente e precisou recuar.");
+        }
+    }
 }

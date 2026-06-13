@@ -9,8 +9,14 @@ public abstract class MembroGuilda {
         this.custoRecrutamento = custoRecrutamento;
     }
 
+    // Getters
     public String getNome() { return nome; }
+
+
+    public int getNivel() { return nivel; }
+
     public double getCustoRecrutamento() { return custoRecrutamento; }
+
 
     public abstract void exibirHabilidade();
 
