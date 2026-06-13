@@ -2,7 +2,8 @@
 <project version="4">
   <component name="ProjectModuleManager">
     <modules>
-      <module fileurl="file://$PROJECT_DIR$/.idea/final-2026a-gabrieldequadro.iml" filepath="$PROJECT_DIR$/.idea/final-2026a-gabrieldequadro.iml" />
+      <module fileurl="file://$PROJECT_DIR$/.idea/modules/core/final-2026a-gabrieldequadro.core.main.iml" filepath="$PROJECT_DIR$/.idea/modules/core/final-2026a-gabrieldequadro.core.main.iml" />
+      <module fileurl="file://$PROJECT_DIR$/.idea/modules/html/final-2026a-gabrieldequadro.html.main.iml" filepath="$PROJECT_DIR$/.idea/modules/html/final-2026a-gabrieldequadro.html.main.iml" />
       <module fileurl="file://$PROJECT_DIR$/guilda/guilda.iml" filepath="$PROJECT_DIR$/guilda/guilda.iml" />
       <module fileurl="file://$PROJECT_DIR$/Core/src/src.iml" filepath="$PROJECT_DIR$/Core/src/src.iml" />
     </modules>
