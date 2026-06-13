@@ -88,4 +88,7 @@ public class Guilda {
         }
     public String getNome() { return nome; }
     public double getOuro() { return ouro; }
+    public java.util.List<MembroGuilda> getMembros() {
+        return membros;
+    }
     }
