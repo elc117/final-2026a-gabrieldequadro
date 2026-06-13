@@ -1,0 +1,10 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<project version="4">
+  <component name="ProjectModuleManager">
+    <modules>
+      <module fileurl="file://$PROJECT_DIR$/.idea/final-2026a-gabrieldequadro.iml" filepath="$PROJECT_DIR$/.idea/final-2026a-gabrieldequadro.iml" />
+      <module fileurl="file://$PROJECT_DIR$/guilda/guilda.iml" filepath="$PROJECT_DIR$/guilda/guilda.iml" />
+      <module fileurl="file://$PROJECT_DIR$/Core/src/src.iml" filepath="$PROJECT_DIR$/Core/src/src.iml" />
+    </modules>
+  </component>
+</project>
