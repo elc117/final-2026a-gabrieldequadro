@@ -82,7 +82,20 @@ public class TelaGestao implements Screen {
         // Rodapé
         fonte.draw(game.batch, "[Pressione ESPAÇO para iniciar a Expedição Side-Scroller]", 50, 50);
         if (Gdx.input.isKeyJustPressed(Input.Keys.SPACE)) {
-            game.setScreen(new TelaPlataforma(game));
+            if (game.minhaGuilda.getMembros().size() >= 2) {
+                // Seleciona os dois primeiros heróis da lista
+                MembroGuilda heroi1 = game.minhaGuilda.getMembros().get(0);
+                MembroGuilda heroi2 = game.minhaGuilda.getMembros().get(1);
+
+                // Cria o objeto lógico da expedição
+                com.quadro.guildcontroler.model.Expedicao novaExpedicao =
+                        new com.quadro.guildcontroler.model.Expedicao(heroi1, heroi2);
+
+                // Envia a expedição para a tela de plataforma
+                game.setScreen(new TelaPlataforma(game, novaExpedicao));
+            } else {
+                System.out.println("[TAVERNA] Precisas de pelo menos 2 heróis para iniciar uma expedição!");
+            }
         }
         game.batch.end();
     }
