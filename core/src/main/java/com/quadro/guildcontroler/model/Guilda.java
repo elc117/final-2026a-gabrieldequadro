@@ -69,26 +69,37 @@ public class Guilda {
     }
 
     public void comprarItem(Item item) {
-            if (this.ouro >= item.getPreco()) {
-                this.ouro -= item.getPreco();
-                inventarioItens.add(item);
-                System.out.println("[LOJA] Comprou " + item.getNome() + " para o inventário da guilda.");
-            } else {
-                System.out.println("[LOJA] Ouro insuficiente para comprar " + item.getNome());
-            }
+        if (this.ouro >= item.getPreco()) {
+            this.ouro -= item.getPreco();
+            inventarioItens.add(item);
+            System.out.println("[LOJA] Comprou " + item.getNome() + " para o inventário da guilda.");
+        } else {
+            System.out.println("[LOJA] Ouro insuficiente para comprar " + item.getNome());
         }
+    }
 
-        public void darItemAoMembro(MembroGuilda membro, Item item) {
-            if (inventarioItens.contains(item)) {
-                membro.equipar(item);
-                inventarioItens.remove(item); // O item sai do baú da guilda e vai para o herói
-            } else {
-                System.out.println("[ERRO] Esse item não está no inventário da guilda.");
-            }
+    public void darItemAoMembro(MembroGuilda membro, Item item) {
+        if (inventarioItens.contains(item)) {
+            membro.equipar(item);
+            inventarioItens.remove(item); // O item sai do baú da guilda e vai para o herói
+        } else {
+            System.out.println("[ERRO] Esse item não está no inventário da guilda.");
         }
-    public String getNome() { return nome; }
-    public double getOuro() { return ouro; }
+    }
+
+    public String getNome() {
+        return nome;
+    }
+
+    public double getOuro() {
+        return ouro;
+    }
+
     public java.util.List<MembroGuilda> getMembros() {
         return membros;
     }
+
+    public java.util.List<Item> getInventarioItens() {
+        return inventarioItens;
     }
+}
