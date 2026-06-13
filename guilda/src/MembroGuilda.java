@@ -1,27 +1,37 @@
 public abstract class MembroGuilda {
     private String nome;
-    private int nivel;
+    private int nivelBase;
     private double custoRecrutamento;
+    private Item itemEquipado;
 
     public MembroGuilda(String nome, int nivel, double custoRecrutamento) {
         this.nome = nome;
-        this.nivel = nivel;
+        this.nivelBase = nivel;
         this.custoRecrutamento = custoRecrutamento;
+        this.itemEquipado = null;
     }
 
-    // Getters
     public String getNome() { return nome; }
-
-
-    public int getNivel() { return nivel; }
-
     public double getCustoRecrutamento() { return custoRecrutamento; }
 
+
+    public int getNivel() {
+        if (itemEquipado != null) {
+            return nivelBase + itemEquipado.getBonusNivel();
+        }
+        return nivelBase;
+    }
+
+    public void equipar(Item novoItem) {
+        this.itemEquipado = novoItem;
+        System.out.println("[" + nome + "] equipou " + novoItem.getNome() + "!");
+    }
 
     public abstract void exibirHabilidade();
 
     @Override
     public String toString() {
-        return nome + " (Nível " + nivel + ")";
+        String infoItem = (itemEquipado != null) ? " | Equipado: " + itemEquipado.getNome() : " | Desarmado";
+        return nome + " (Nível Real: " + getNivel() + infoItem + ")";
     }
 }

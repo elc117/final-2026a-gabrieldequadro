@@ -1,3 +1,4 @@
+
 import java.util.ArrayList;
 import java.util.List;
 
@@ -5,6 +6,7 @@ public class Guilda {
     private String nome;
     private double ouro;
     private List<MembroGuilda> membros;
+    private List<Item> inventarioItens = new ArrayList<>();
 
     public Guilda(String nome, double ouroInicial) {
         this.nome = nome;
@@ -65,4 +67,23 @@ public class Guilda {
             System.out.println("[DERROTA] O grupo não foi forte o suficiente e precisou recuar.");
         }
     }
-}
+
+    public void comprarItem(Item item) {
+            if (this.ouro >= item.getPreco()) {
+                this.ouro -= item.getPreco();
+                inventarioItens.add(item);
+                System.out.println("[LOJA] Comprou " + item.getNome() + " para o inventário da guilda.");
+            } else {
+                System.out.println("[LOJA] Ouro insuficiente para comprar " + item.getNome());
+            }
+        }
+
+        public void darItemAoMembro(MembroGuilda membro, Item item) {
+            if (inventarioItens.contains(item)) {
+                membro.equipar(item);
+                inventarioItens.remove(item); // O item sai do baú da guilda e vai para o herói
+            } else {
+                System.out.println("[ERRO] Esse item não está no inventário da guilda.");
+            }
+        }
+    }
