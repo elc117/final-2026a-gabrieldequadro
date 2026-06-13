@@ -12,6 +12,7 @@ public class Obstaculo {
     }
 
 
+
     public boolean tentarSuperar(MembroGuilda personagem) {
         System.out.println("\n[Fase Side-Scroller] Você encontrou: " + nome);
 
@@ -35,5 +36,6 @@ public class Obstaculo {
         }
     }
 
+    public String getNome() { return nome; }
     public double getRecompensaOculta() { return recompensaOculta; }
 }
