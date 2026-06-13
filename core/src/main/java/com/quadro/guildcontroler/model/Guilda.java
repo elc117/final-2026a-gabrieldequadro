@@ -102,4 +102,8 @@ public class Guilda {
     public java.util.List<Item> getInventarioItens() {
         return inventarioItens;
     }
+    public void adicionarOuro(double quantidade) {
+        this.ouro += quantidade;
+        System.out.println("[GUILDA] Ganhou +" + quantidade + " PO!");
+    }
 }
