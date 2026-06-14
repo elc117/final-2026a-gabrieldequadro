@@ -9,3 +9,5 @@ No dia 12, 13 e 14 passei para a parte das telas, onde crie em principio duas te
 Deixar o mapa mais bonito (Estou pesquisando com qual ferramenta será mais facil)
 achar sprits para deixar o jogo com um visual melhor
 criar novos obstaculos e as habilidades do mago, talvez até adicionar inimigos ou algo do tipo.
+
+https://quadrosyt.itch.io/guild-controler
