@@ -145,12 +145,14 @@ public class TelaPlataforma implements Screen {
         if (Gdx.input.isKeyJustPressed(Input.Keys.ESCAPE)) game.setScreen(new TelaGestao(game));
 
         // RENDERIZAÇÃO GRÁFICA
+        game.camera.update();
+        shapeRenderer.setProjectionMatrix(game.camera.combined);
         Gdx.gl.glClearColor(0.5f, 0.8f, 1f, 1f);
         Gdx.gl.glClear(GL20.GL_COLOR_BUFFER_BIT);
 
         shapeRenderer.begin(ShapeType.Filled);
         shapeRenderer.setColor(0.2f, 0.8f, 0.2f, 1f);
-        shapeRenderer.rect(0, 0, 1000, ALTURA_CHAO);
+        shapeRenderer.rect(0, 0, 1280, ALTURA_CHAO);
         shapeRenderer.setColor(1f, 0.8f, 0.1f, 1f);
         for (Rectangle moeda : moedas) shapeRenderer.rect(moeda.x, moeda.y, moeda.width, moeda.height);
 
@@ -178,7 +180,9 @@ public class TelaPlataforma implements Screen {
     }
 
     @Override public void dispose() { shapeRenderer.dispose(); }
-    @Override public void resize(int width, int height) {}
+    @Override public void resize(int width, int height) {
+        game.viewport.update(width, height);
+    }
     @Override public void pause() {}
     @Override public void resume() {}
     @Override public void hide() { dispose(); }
