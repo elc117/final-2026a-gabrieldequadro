@@ -1,4 +1,5 @@
 package com.quadro.guildcontroler.model;
+
 public abstract class MembroGuilda {
     private String nome;
     private int nivelBase;
@@ -14,18 +15,21 @@ public abstract class MembroGuilda {
 
     public String getNome() { return nome; }
     public double getCustoRecrutamento() { return custoRecrutamento; }
-
-
-    public int getNivel() {
-        if (itemEquipado != null) {
-            return nivelBase + itemEquipado.getBonusNivel();
-        }
-        return nivelBase;
-    }
-
-    public void equipar(Item novoItem) {
+    public void equiparItem(Item novoItem) {
         this.itemEquipado = novoItem;
         System.out.println("[" + nome + "] equipou " + novoItem.getNome() + "!");
+    }
+
+    public int getNivel() {
+        return getNivelTotal();
+    }
+
+    public int getNivelTotal() {
+        int nivelFinal = this.nivelBase;
+        if (this.itemEquipado != null) {
+            nivelFinal += this.itemEquipado.getBonusNivel();
+        }
+        return nivelFinal;
     }
 
     public abstract void exibirHabilidade();
@@ -33,6 +37,6 @@ public abstract class MembroGuilda {
     @Override
     public String toString() {
         String infoItem = (itemEquipado != null) ? " | Equipado: " + itemEquipado.getNome() : " | Desarmado";
-        return nome + " (Nível Real: " + getNivel() + infoItem + ")";
+        return nome + " (Nível Real: " + getNivelTotal() + infoItem + ")";
     }
 }

@@ -1,0 +1,181 @@
+#
+# A fatal error has been detected by the Java Runtime Environment:
+#
+#  SIGSEGV (0xb) at pc=0x0000789ee8d88a01, pid=62451, tid=62454
+#
+# JRE version: OpenJDK Runtime Environment Temurin-21.0.11+10 (21.0.11+10) (build 21.0.11+10-LTS)
+# Java VM: OpenJDK 64-Bit Server VM Temurin-21.0.11+10 (21.0.11+10-LTS, mixed mode, sharing, tiered, compressed oops, compressed class ptrs, g1 gc, linux-amd64)
+# Problematic frame:
+# C  [libc.so.6+0x188a01]
+[timeout occurred during error reporting in step "printing problematic frame"] after 30 s.
+# Core dump will be written. Default location: Core dumps may be processed with "/usr/share/apport/apport -p%p -s%s -c%c -d%d -P%P -u%u -g%g -F%F -- %E" (or dumping to /home/gabriel/IdeaProjects/final-2026a-gabrieldequadro/core.62451)
+#
+# If you would like to submit a bug report, please visit:
+#   https://github.com/adoptium/adoptium-support/issues
+# The crash happened outside the Java Virtual Machine in native code.
+# See problematic frame for where to report the bug.
+#
+
+---------------  S U M M A R Y ------------
+
+Command Line: -Dfile.encoding=UTF-8 -Duser.country=BR -Duser.language=pt -Duser.variant com.quadro.guildcontroler.lwjgl3.Lwjgl3Launcher
+
+Host: AMD Ryzen 5 7520U with Radeon Graphics, 8 cores, 14G, 
+[timeout occurred during error reporting in step "printing summary machine and OS info"] after 30 s.
+Time: Sat Jun 13 20:55:03 2026 -03 elapsed time: 67.830868 seconds (0d 0h 1m 7s)
+
+---------------  T H R E A D  ---------------
+
+Current thread (0x0000789ee002ddc0):  JavaThread "main"             [_thread_in_native, id=62454, stack(0x0000789ee7417000,0x0000789ee7517000) (1024K)]
+
+Stack: [0x0000789ee7417000,0x0000789ee7517000],  sp=0x0000789ee7514f58,  free space=1015k
+Native frames: (J=compiled Java code, j=interpreted, Vv=VM code, C=native code)
+C  [libc.so.6+0x188a01]
+[timeout occurred during error reporting in step "printing native stack (with source info)"] after 30 s.
+
+[timeout occurred during error reporting in step "retry printing native stack (no source info)"] after 60 s.
+Java frames: (J=compiled Java code, j=interpreted, Vv=VM code)
+J 1214  org.lwjgl.opengl.GL11C.glDrawArrays(III)V (0 bytes) @ 0x0000789ed0337eff [0x0000789ed0337ea0+0x000000000000005f]
+j  org.lwjgl.opengl.GL11.glDrawArrays(III)V+3
+j  com.badlogic.gdx.backends.lwjgl3.Lwjgl3GL20.glDrawArrays(III)V+3
+j  com.badlogic.gdx.graphics.Mesh.render(Lcom/badlogic/gdx/graphics/glutils/ShaderProgram;IIIZ)V+311
+j  com.badlogic.gdx.graphics.Mesh.render(Lcom/badlogic/gdx/graphics/glutils/ShaderProgram;I)V+31
+j  com.badlogic.gdx.graphics.glutils.ImmediateModeRenderer20.flush()V+87
+j  com.badlogic.gdx.graphics.glutils.ImmediateModeRenderer20.end()V+1
+j  com.badlogic.gdx.graphics.glutils.ShapeRenderer.end()V+4
+j  com.quadro.guildcontroler.screens.TelaPlataforma.render(F)V+780
+J 1204 c1 com.badlogic.gdx.backends.lwjgl3.Lwjgl3Window.update()Z (312 bytes) @ 0x0000789ec89ff2a4 [0x0000789ec89fdf00+0x00000000000013a4]
+j  com.badlogic.gdx.backends.lwjgl3.Lwjgl3Application.loop()V+120
+j  com.badlogic.gdx.backends.lwjgl3.Lwjgl3Application.<init>(Lcom/badlogic/gdx/ApplicationListener;Lcom/badlogic/gdx/backends/lwjgl3/Lwjgl3ApplicationConfiguration;)V+269
+j  com.quadro.guildcontroler.lwjgl3.Lwjgl3Launcher.createApplication()Lcom/badlogic/gdx/backends/lwjgl3/Lwjgl3Application;+14
+j  com.quadro.guildcontroler.lwjgl3.Lwjgl3Launcher.main([Ljava/lang/String;)V+7
+v  ~StubRoutines::call_stub 0x0000789ecfd37cc6
+
+siginfo: si_signo: 11 (SIGSEGV), si_code: 1 (SEGV_MAPERR), si_addr: 0x000000000000000c
+
+Registers:
+RAX=0x0000789dcf7c0000, RBX=0x0000789e14333010, RCX=0x0000000000000000, RDX=0x0000000000000114
+RSP=0x0000789ee7514f58, RBP=0x0000789ee7514fc0, RSI=0x000000000000000c, RDI=0x0000789dcf7c0000
+R8 =0x0000789ee7515018, R9 =0x0000000000000000, R10=0x000000000000001a, R11=0x0000000000000003
+R12=0x0000000000000114, R13=0x0000000000000000, R14=0x000000000000000c, R15=0x0000789ee7515014
+RIP=0x0000789ee8d88a01, EFLAGS=0x0000000000010202, CSGSFS=0x002b000000000033, ERR=0x0000000000000004
+  TRAPNO=0x000000000000000e
+
+XMM[0]=0x0000000100000000 0x0010000000000000
+XMM[1]=0x0000000000000000 0x0000789ee0ba3e40
+XMM[2]=0x0000000000000000 0x0000000000100000
+XMM[3]=0x0000000000000000 0x0000000000100000
+XMM[4]=0x0000000000000000 0x0000789ee0000090
+XMM[5]=0x0000000000310001 0x0001000100100000
+XMM[6]=0x0000000000000000 0x0000001000003000
+XMM[7]=0xfecc199900000000 0x4365244343dbe153
+XMM[8]=0xfe7f331900000000 0x4370000044228000
+XMM[9]=0x0000000000000000 0x0000000042cccccd
+XMM[10]=0x0000000000000000 0x0000000043a00000
+XMM[11]=0x0000000000000000 0x0000000043700000
+XMM[12]=0x0000000000000000 0x00000000219f4a4c
+XMM[13]=0x0000000000000000 0x0000000000000001
+XMM[14]=0x0000000000000000 0x0407060500030201
+XMM[15]=0x0000000000000000 0x0000000000000000
+  MXCSR=0x00001fa7
+
+
+Register to memory mapping:
+
+RAX=0x0000789dcf7c0000 points into unknown readable memory: 0x0000000000000000 | 00 00 00 00 00 00 00 00
+RBX=0x0000789e14333010 points into unknown readable memory: 0x0000789ee0db9fc0 | c0 9f db e0 9e 78 00 00
+RCX=0x0 is null
+RDX=0x0000000000000114 is an unknown value
+RSP=0x0000789ee7514f58 is pointing into the stack for thread: 0x0000789ee002ddc0
+RBP=0x0000789ee7514fc0 is pointing into the stack for thread: 0x0000789ee002ddc0
+RSI=0x000000000000000c is an unknown value
+RDI=0x0000789dcf7c0000 points into unknown readable memory: 0x0000000000000000 | 00 00 00 00 00 00 00 00
+R8 =0x0000789ee7515018 is pointing into the stack for thread: 0x0000789ee002ddc0
+R9 =0x0 is null
+R10=0x000000000000001a is an unknown value
+R11=0x0000000000000003 is an unknown value
+R12=0x0000000000000114 is an unknown value
+R13=0x0 is null
+R14=0x000000000000000c is an unknown value
+R15=0x0000789ee7515014 is pointing into the stack for thread: 0x0000789ee002ddc0
+
+Top of Stack: (sp=0x0000789ee7514f58)
+0x0000789ee7514f58:   0000789e15541a6c 0000000000000000   l.T..x..........
+0x0000789ee7514f68:   0000000000000400 0000000000000000   ................
+0x0000789ee7514f78:   0000789ee7515018 0000789ee7514fd0   .PQ..x...OQ..x..
+0x0000789ee7514f88:   9972b135471e4000 0000789ee7515018   .@.G5.r..PQ..x..
+0x0000789ee7514f98:   0000000000000000 0000000000000000   ................
+0x0000789ee7514fa8:   0000000000000000 0000000000010000   ................
+0x0000789ee7514fb8:   0000789e143492c0 0000789ee75152e0   ..4..x...RQ..x..
+0x0000789ee7514fc8:   0000789e15785def 0000000000000000   .]x..x..........
+0x0000789ee7514fd8:   0000789ee7c63c06 0000789ee7515030   .<...x..0PQ..x..
+0x0000789ee7514fe8:   0000000000000012 0000789e00000000   .............x..
+0x0000789ee7514ff8:   0000789e14333010 0000000700010000   .03..x..........
+0x0000789ee7515008:   0001000000000004 0000000000000000   ................
+0x0000789ee7515018:   0000000000000000 0000000000000040   ........@.......
+0x0000789ee7515028:   00000007ffe7fbb8 0000789e637b3620   ........ 6{c.x..
+0x0000789ee7515038:   0000789e155424e1 0000789e637b3620   .$T..x.. 6{c.x..
+0x0000789ee7515048:   0000000000000000 0000789ee75150b0   .........PQ..x..
+0x0000789ee7515058:   0000789ed031820d 0000000000000010   ..1..x..........
+0x0000789ee7515068:   000000000000000c 0000000000000000   ................
+0x0000789ee7515078:   0000000000000000 0000789ee7515110   .........QQ..x..
+0x0000789ee7515088:   0000789ee7c620ac 000004006377bb78   . ...x..x.wc....
+0x0000789ee7515098:   00000000000000c8 000000071f84e5c8   ................
+0x0000789ee75150a8:   0000789ee8b10440 0000789ee7515310   @....x...SQ..x..
+0x0000789ee75150b8:   0000789ec89c5a9c 0000000000000000   .Z...x..........
+0x0000789ee75150c8:   0000789ee75152a0 0000789ee7515140   .RQ..x..@QQ..x..
+0x0000789ee75150d8:   0000789ee002ddc0 0000789ee7515100   .....x...QQ..x..
+0x0000789ee75150e8:   0000789e155421bf 0000789e16ce6ce6   .!T..x...l...x..
+0x0000789ee75150f8:   000000000000002b 0000789ee7515150   +.......PQQ..x..
+0x0000789ee7515108:   0000789ed0329804 0000789ee7515310   ..2..x...SQ..x..
+0x0000789ee7515118:   0000789ec89c571c 0000789ee7515230   .W...x..0RQ..x..
+0x0000789ee7515128:   0000000000000000 0000789e67654168   ........hAeg.x..
+0x0000789ee7515138:   0000789ee002ddc0 000000071fbc1c58   .....x..X.......
+0x0000789ee7515148:   0000789e6376f9a0 0000789ee7515310   ..vc.x...SQ..x..
+
+Instructions: (pc=0x0000789ee8d88a01)
+0x0000789ee8d88901:   e5 74 5a 40 83 ff 40 73 1c c5 fe 6f 4c 16 20 c5
+0x0000789ee8d88911:   f5 74 4a 20 c5 fe 6f 14 16 c5 ed 74 12 c5 dd db
+0x0000789ee8d88921:   e3 c5 ed db d9 c5 dd db e3 c5 fd d7 c4 ff c0 c5
+0x0000789ee8d88931:   f8 77 c3 66 66 2e 0f 1f 84 00 00 00 00 00 90 83
+0x0000789ee8d88941:   fa 10 73 1b 83 fa 08 77 36 83 fa 04 72 4b 8b 07
+0x0000789ee8d88951:   2b 06 8b 4c 17 fc 8b 7c 16 fc 29 f9 09 c8 c3 c5
+0x0000789ee8d88961:   fa 6f 0e c5 f1 74 0f c5 fa 6f 54 16 f0 c5 e9 74
+0x0000789ee8d88971:   54 17 f0 c5 e9 db d1 c5 f9 d7 c2 66 f7 d0 c3 48
+0x0000789ee8d88981:   8b 07 48 2b 06 48 8b 4c 17 f8 48 8b 7c 16 f8 48
+0x0000789ee8d88991:   29 f9 48 09 c8 0f 45 c2 c3 0f b7 07 0f b7 0e 29
+0x0000789ee8d889a1:   c8 0f b6 4c 17 ff 2a 4c 16 ff 09 c8 c3 66 2e 0f
+0x0000789ee8d889b1:   1f 84 00 00 00 00 00 0f 1f 84 00 00 00 00 00 f3
+0x0000789ee8d889c1:   0f 1e fa 48 39 d1 0f 82 23 dc fa ff 0f 1f 00 f3
+0x0000789ee8d889d1:   0f 1e fa 48 89 f8 48 01 d0 eb 1b 0f 1f 40 00 f3
+0x0000789ee8d889e1:   0f 1e fa 48 39 d1 0f 82 03 dc fa ff 0f 1f 00 f3
+0x0000789ee8d889f1:   0f 1e fa 48 89 f8 48 83 fa 20 0f 82 af 00 00 00
+0x0000789ee8d88a01:   c5 fe 6f 06 48 83 fa 40 0f 87 3e 01 00 00 c5 fe
+0x0000789ee8d88a11:   6f 4c 16 e0 c5 fe 7f 07 c5 fe 7f 4c 17 e0 c5 f8
+0x0000789ee8d88a21:   77 c3 66 66 2e 0f 1f 84 00 00 00 00 00 66 90 f3
+0x0000789ee8d88a31:   0f 1e fa 48 39 d1 0f 82 b3 db fa ff 0f 1f 00 f3
+0x0000789ee8d88a41:   0f 1e fa 48 89 f8 48 01 d0 eb 3b 0f 1f 40 00 f3
+0x0000789ee8d88a51:   0f 1e fa 48 39 d1 0f 82 93 db fa ff 66 66 2e 0f
+0x0000789ee8d88a61:   1f 84 00 00 00 00 00 66 66 2e 0f 1f 84 00 00 00
+0x0000789ee8d88a71:   00 00 66 66 2e 0f 1f 84 00 00 00 00 00 66 90 f3
+0x0000789ee8d88a81:   0f 1e fa 48 89 f8 48 83 fa 20 72 23 c5 fe 6f 06
+0x0000789ee8d88a91:   48 83 fa 40 0f 87 a5 00 00 00 c5 fe 6f 4c 16 e0
+0x0000789ee8d88aa1:   c5 fe 7f 07 c5 fe 7f 4c 17 e0 c5 f8 77 c3 90 83
+0x0000789ee8d88ab1:   fa 10 73 2d 83 fa 08 73 46 83 fa 04 73 16 83 fa
+0x0000789ee8d88ac1:   01 7c 10 8a 0e 74 0a 0f b7 74 16 fe 66 89 74 17
+0x0000789ee8d88ad1:   fe 88 0f c3 8b 4c 16 fc 8b 36 89 4c 17 fc 89 37
+0x0000789ee8d88ae1:   c3 c5 fa 6f 06 c5 fa 6f 4c 16 f0 c5 fa 7f 07 c5
+0x0000789ee8d88af1:   fa 7f 4c 17 f0 c3 66 0f 1f 84 00 00 00 00 00 48
+
+
+Stack slot to memory mapping:
+
+stack at sp + 0 slots: 0x0000789e15541a6c: <offset 0x0000000000141a6c> in /lib/x86_64-linux-gnu/libgallium-25.2.8-0ubuntu0.24.04.1.so at 0x0000789e15400000
+stack at sp + 1 slots: 0x0 is null
+stack at sp + 2 slots: 0x0000000000000400 is an unknown value
+stack at sp + 3 slots: 0x0 is null
+stack at sp + 4 slots: 0x0000789ee7515018 is pointing into the stack for thread: 0x0000789ee002ddc0
+stack at sp + 5 slots: 0x0000789ee7514fd0 is pointing into the stack for thread: 0x0000789ee002ddc0
+stack at sp + 6 slots: 0x9972b135471e4000 is an unknown value
+stack at sp + 7 slots: 0x0000789ee7515018 is pointing into the stack for thread: 0x0000789ee002ddc0
+
