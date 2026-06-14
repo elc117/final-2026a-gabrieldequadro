@@ -36,6 +36,7 @@ public class TelaGestao implements Screen {
 
         checarTecladoRecrutamento();
         checarTecladoLoja();
+        checarTecladoEquipar();
         Gdx.gl.glClearColor(0.1f, 0.1f, 0.2f, 1);
         Gdx.gl.glClear(GL20.GL_COLOR_BUFFER_BIT);
 
@@ -55,6 +56,8 @@ public class TelaGestao implements Screen {
         fonte.draw(game.batch, "[I] Espada de Ferro  (100 PO | +2)", 50, 210);
         fonte.draw(game.batch, "[K] Cajado Mágico    (200 PO | +3)", 50, 180);
         fonte.draw(game.batch, "[O] Ferramentas Larápio (80 PO | +2)", 50, 150);
+
+
 
         // COLUNA DA DIREITA
         fonte.draw(game.batch, "--- INTEGRANTES DA GUILDA ---", 450, 380);
@@ -78,25 +81,24 @@ public class TelaGestao implements Screen {
                 posYItens -= 22;
             }
         }
-
-        // Rodapé
-        fonte.draw(game.batch, "[Pressione ESPAÇO para iniciar a Expedição Side-Scroller]", 50, 50);
+        fonte.draw(game.batch, "--- ARMAR HERÓIS ---", 50, 100);
+        fonte.draw(game.batch, "Use os números [1], [2] ou [3] para", 50, 70);
+        fonte.draw(game.batch, "dar o 1º item do Baú ao herói da lista", 50, 45);
+        fonte.draw(game.batch, "[Pressione ESPAÇO para ir à Expedição]", 450, 45);
         if (Gdx.input.isKeyJustPressed(Input.Keys.SPACE)) {
             if (game.minhaGuilda.getMembros().size() >= 2) {
-                // Seleciona os dois primeiros heróis da lista
                 MembroGuilda heroi1 = game.minhaGuilda.getMembros().get(0);
                 MembroGuilda heroi2 = game.minhaGuilda.getMembros().get(1);
 
-                // Cria o objeto lógico da expedição
                 com.quadro.guildcontroler.model.Expedicao novaExpedicao =
                         new com.quadro.guildcontroler.model.Expedicao(heroi1, heroi2);
-
-                // Envia a expedição para a tela de plataforma
                 game.setScreen(new TelaPlataforma(game, novaExpedicao));
             } else {
                 System.out.println("[TAVERNA] Precisas de pelo menos 2 heróis para iniciar uma expedição!");
             }
+
         }
+
         game.batch.end();
     }
 
@@ -114,7 +116,6 @@ public class TelaGestao implements Screen {
             if (game.minhaGuilda.recrutar(l)) qtdLadinos++;
         }
     }
-
     private void checarTecladoLoja() {
         if (Gdx.input.isKeyJustPressed(Input.Keys.I)) {
             Item espada = new Item("Espada de Ferro", 100.0, 2);
@@ -129,6 +130,20 @@ public class TelaGestao implements Screen {
             game.minhaGuilda.comprarItem(ferramentas);
         }
     }
+    private void checarTecladoEquipar() {
+        if (Gdx.input.isKeyJustPressed(Input.Keys.NUM_1) || Gdx.input.isKeyJustPressed(Input.Keys.NUMPAD_1)) {
+            game.minhaGuilda.equiparMembroDaGuilda(0); // Equipa o 1º membro da lista
+        }
+        if (Gdx.input.isKeyJustPressed(Input.Keys.NUM_2) || Gdx.input.isKeyJustPressed(Input.Keys.NUMPAD_2)) {
+            game.minhaGuilda.equiparMembroDaGuilda(1); // Equipa o 2º membro
+        }
+        if (Gdx.input.isKeyJustPressed(Input.Keys.NUM_3) || Gdx.input.isKeyJustPressed(Input.Keys.NUMPAD_3)) {
+            game.minhaGuilda.equiparMembroDaGuilda(2); // Equipa o 3º membro
+        }
+    }
+
+
+
 
     @Override public void dispose() { fonte.dispose(); }
     @Override public void resize(int width, int height) {}

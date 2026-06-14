@@ -80,10 +80,8 @@ public class Guilda {
 
     public void darItemAoMembro(MembroGuilda membro, Item item) {
         if (inventarioItens.contains(item)) {
-            membro.equipar(item);
-            inventarioItens.remove(item); // O item sai do baú da guilda e vai para o herói
-        } else {
-            System.out.println("[ERRO] Esse item não está no inventário da guilda.");
+            membro.equiparItem(item);
+            inventarioItens.remove(item);
         }
     }
 
@@ -105,5 +103,16 @@ public class Guilda {
     public void adicionarOuro(double quantidade) {
         this.ouro += quantidade;
         System.out.println("[GUILDA] Ganhou +" + quantidade + " PO!");
+    }
+    public void equiparMembroDaGuilda(int indiceMembro) {
+        if (membros.size() > indiceMembro && !inventarioItens.isEmpty()) {
+            MembroGuilda membro = membros.get(indiceMembro);
+            Item item = inventarioItens.remove(0); // Tira o primeiro item do baú
+
+            membro.equiparItem(item);
+            System.out.println("[SISTEMA] " + membro.getNome() + " pegou o item " + item.getNome() + " do baú!");
+        } else {
+            System.out.println("[SISTEMA] Não há heróis nessa posição ou o baú está vazio!");
+        }
     }
 }
