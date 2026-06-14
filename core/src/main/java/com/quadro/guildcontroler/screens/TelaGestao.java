@@ -39,7 +39,10 @@ public class TelaGestao implements Screen {
         checarTecladoEquipar();
         Gdx.gl.glClearColor(0.1f, 0.1f, 0.2f, 1);
         Gdx.gl.glClear(GL20.GL_COLOR_BUFFER_BIT);
-
+        game.camera.update();
+        game.batch.setProjectionMatrix(game.camera.combined);
+        Gdx.gl.glClearColor(0.1f, 0.1f, 0.2f, 1);
+        Gdx.gl.glClear(GL20.GL_COLOR_BUFFER_BIT);
         game.batch.begin();
 
         // Dados do Topo
@@ -56,8 +59,6 @@ public class TelaGestao implements Screen {
         fonte.draw(game.batch, "[I] Espada de Ferro  (100 PO | +2)", 50, 210);
         fonte.draw(game.batch, "[K] Cajado Mágico    (200 PO | +3)", 50, 180);
         fonte.draw(game.batch, "[O] Ferramentas Larápio (80 PO | +2)", 50, 150);
-
-
 
         // COLUNA DA DIREITA
         fonte.draw(game.batch, "--- INTEGRANTES DA GUILDA ---", 450, 380);
@@ -132,13 +133,13 @@ public class TelaGestao implements Screen {
     }
     private void checarTecladoEquipar() {
         if (Gdx.input.isKeyJustPressed(Input.Keys.NUM_1) || Gdx.input.isKeyJustPressed(Input.Keys.NUMPAD_1)) {
-            game.minhaGuilda.equiparMembroDaGuilda(0); // Equipa o 1º membro da lista
+            game.minhaGuilda.equiparMembroDaGuilda(0);
         }
         if (Gdx.input.isKeyJustPressed(Input.Keys.NUM_2) || Gdx.input.isKeyJustPressed(Input.Keys.NUMPAD_2)) {
-            game.minhaGuilda.equiparMembroDaGuilda(1); // Equipa o 2º membro
+            game.minhaGuilda.equiparMembroDaGuilda(1);
         }
         if (Gdx.input.isKeyJustPressed(Input.Keys.NUM_3) || Gdx.input.isKeyJustPressed(Input.Keys.NUMPAD_3)) {
-            game.minhaGuilda.equiparMembroDaGuilda(2); // Equipa o 3º membro
+            game.minhaGuilda.equiparMembroDaGuilda(2);
         }
     }
 
@@ -146,7 +147,9 @@ public class TelaGestao implements Screen {
 
 
     @Override public void dispose() { fonte.dispose(); }
-    @Override public void resize(int width, int height) {}
+    @Override public void resize(int width, int height) {
+        game.viewport.update(width, height);
+    }
     @Override public void pause() {}
     @Override public void resume() {}
     @Override public void hide() { dispose(); }
