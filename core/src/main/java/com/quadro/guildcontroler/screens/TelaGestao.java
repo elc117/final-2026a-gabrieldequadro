@@ -66,9 +66,9 @@ public class TelaGestao implements Screen {
             @Override
             public void changed(ChangeEvent event, Actor actor) {
                 if (game.minhaGuilda.getMembros().size() >= 2) {
-                    MembroGuilda h1 = game.minhaGuilda.getMembros().get(0);
-                    MembroGuilda h2 = game.minhaGuilda.getMembros().get(1);
-                    game.setScreen(new TelaPlataforma(game, new Expedicao(h1, h2)));
+                    game.setScreen(new TelaPlataforma(game, new Expedicao(game.minhaGuilda.getMembros())));
+                } else {
+                    System.out.println("Você precisa de pelo menos 2 heróis para fazer a mecânica de equipe!");
                 }
             }
         });
