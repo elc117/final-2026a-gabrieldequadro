@@ -1,3 +1,12 @@
 Assets.png
 Assets.tsx
+backgrounbd.png
+guarda.png
+guerreiro.png
+ladino.png
+mago.png
 mapa.tmx
+saida.png
+saida.tsx
+teste.png
+teste.tsx
