@@ -1,4 +1,4 @@
-##Gabriel de Quadro Schutz da Silva
+#Gabriel de Quadro Schutz da Silva
 
 Gostaria de fazer um slide scroller, onde durante a parte do dia será administrado um tipo de guilda, onde terá uma pequena parte de gerenciamento ( venda de itens, recrutamento para o grupo).
 
