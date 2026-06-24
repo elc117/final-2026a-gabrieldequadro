@@ -80,6 +80,13 @@ Sprites de personagens e porta de saida geradas pelo chatGPT
 # Prompts usados
 
 File not found: Assets.tsx (Internal)(Assets estavam na mesma pasta do mapa.txm porém não eram reconhecidos, foi resolvido criando outro mapa e carregando novamente os Assets.png)
-Você enviou os sprites do guerreiro, ladino, mago, porta e guarda] e perguntou: "tenho esses sprites, como faço para anexalos ao jogo (Foram dadas duas opções, colocar a cordenada de onde eles apareceriam, colocando diretamente no codigo ou adicionando colisões no programa Tiled, fiz do segundo jeito e para os guerreiros, ladino e mago, acrescentei no codigo usando texture e texture region para fazer o recorte)
+Você enviou os sprites do guerreiro, ladino, mago, porta e guarda] e perguntou: "tenho esses sprites, como faço para anexalos ao jogo (Foram dadas duas opções, colocar a cordenada de onde
+eles apareceriam, colocando diretamente no codigo ou adicionando colisões no programa Tiled, fiz do segundo jeito e para os guerreiros, ladino e mago, acrescentei no codigo usando texture e texture region para fazer o recorte)
+
+# VIDEO
+
+<img width="480" height="270" alt="game" src="https://github.com/user-attachments/assets/b4c8a732-dd58-498b-8a92-4bb75a263753" />
+
+
 # Tela jogo atual
 https://quadrosyt.itch.io/guild-controler
