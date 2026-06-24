@@ -23,6 +23,52 @@ No dia 22 comecei a fazer o mapa usando a ferramenta Tiled que pode ser encontra
 
 No dia 23 apenas adicionei alguns sprites, terminei o mapa coloquei uma imagem de fundo e arrumei alguns dos tiles que haviam ficado travando o personagem por serem mais altos que outros, adicionei o guarda ao mapa e deixei com que fosse possivel passar por ele porém ainda com a função de caso entre no campo de visão do mesmo você perca.
 
+## Evolução das tela
+
+# Tela da equipe
+
+<img width="1282" height="724" alt="image" src="https://github.com/user-attachments/assets/e4f9f6ee-a73b-49de-8470-b84beb3d10a8" />
+
+Primeira tela do jogo, onde os comandos ainda eram feitos por teclado.
+
+# Tela do mini-game de coletas de moeda
+
+<img width="1282" height="724" alt="image" src="https://github.com/user-attachments/assets/a1c51958-e138-4158-953e-720da85caac4" />
+
+Aqui foram feitos alguns testes para ver se todas as funções se adequaram corretamente ao jogo, onde fui melhorando pouco a pouco
+
+# Tela equipe 
+
+<img width="1858" height="1003" alt="image" src="https://github.com/user-attachments/assets/9e28ff0f-5ed8-41db-b8e8-8609b998a146" />
+
+Tela final, onde os botões já estão clicaveis.
+
+# tela do mini-game
+
+<img width="1858" height="1003" alt="image" src="https://github.com/user-attachments/assets/314d5b5f-6967-42f4-9923-27dc7f216d5e" />
+
+Tela final, acabei esquecendo de tirar print das outras versões onde errei os sprites, coloquei os objetos ainda como quadrados amarelos ou azuis.
+
+# Diagrama de classes
+
+<img width="663" height="582" alt="image" src="https://github.com/user-attachments/assets/7c35b3df-f096-48c0-be78-5c466993f2b3" />
+
+Ferramenta usada para gerar o diagrama de classe: https://plantuml.com/
+
+## Como executar
+
+### Requisitos
+- Java 17 ou superior
+
+### Executando o projeto
+
+Linux/macOS:
+
+```bash
+./gradlew clean
+./gradlew :lwjgl3:run
 
 
+
+# Tela jogo atual
 https://quadrosyt.itch.io/guild-controler
